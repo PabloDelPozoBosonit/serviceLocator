@@ -20,9 +20,14 @@ public class VehicleController {
     @GetMapping("{vehicle}")
     public String processGet(@PathVariable String vehicle) {
 
-        if(vehicle.equals("bike"))
-        return bikeService.process();
-        else if(vehicle.equals("car"))
+        if (vehicle.equals("bike"))
+            return bikeService.process();
+
+        else if (vehicle.equals("car"))
             return carService.process();
+
+        else
+        return "Escribe un tipo de vehiculo";
     }
+
 }
